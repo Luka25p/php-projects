@@ -1,0 +1,18 @@
+// Colors
+$primary-color: #007bff;
+$primary-light: #00bfff;
+$dark-bg: #1a1a1a;
+$dark-bg-2: #2d2d2d;
+$text-light: #f4f4f4;
+$text-gray: #ccc;
+
+// Gradients
+$primary-gradient: linear-gradient(45deg, $primary-color, $primary-light);
+$bg-gradient: linear-gradient(135deg, $dark-bg, $dark-bg-2);
+
+// Shadows
+$card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+$hover-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+
+// Transitions
+$transition-default: all 0.3s ease; 

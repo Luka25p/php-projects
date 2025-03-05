@@ -1,0 +1,398 @@
+@import 'variables';
+@import 'profile-card';
+@import 'posts';
+@import 'post-form';
+
+// Variables
+$primary-color: #1da1f2;
+$secondary-color: #657786;
+$background-color: #f7f9fa;
+$text-primary: #14171a;
+$text-secondary: #657786;
+$border-color: #e1e8ed;
+$hover-color: #e8f5fe;
+$white: #ffffff;
+$sidebar-bg: #fff;
+$success-color: #2e7d32;
+$error-color: #c62828;
+$border-radius: 12px;
+$transition: all 0.3s ease;
+
+// Mixins
+@mixin card-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+@mixin transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin card {
+    background: $white;
+    border-radius: 15px;
+    border: 1px solid $border-color;
+}
+
+// Global Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: $background-color;
+    color: $text-primary;
+    line-height: 1.4;
+}
+
+// Navigation
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+    border-bottom: 1px solid $border-color;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+.nav-search {
+    position: relative;
+    flex: 0 1 300px;
+
+    input {
+        width: 100%;
+        padding: 0.5rem 2rem;
+        border-radius: 20px;
+        border: 1px solid $border-color;
+        background: $background-color;
+        font-size: 0.9rem;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+            background: $white;
+        }
+    }
+
+    i {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $secondary-color;
+    }
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-icon {
+    color: $text-primary;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    &:hover {
+        background: $hover-color;
+        color: $primary-color;
+    }
+}
+
+// Layout
+.layout {
+    max-width: 1280px;
+    margin: 60px auto 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: 2rem;
+}
+
+// Profile Quick View
+.profile-quick-view {
+    @include card;
+    overflow: hidden;
+    position: sticky;
+    top: 80px;
+
+    .profile-banner {
+        height: 95px;
+        background: linear-gradient(45deg, $primary-color, lighten($primary-color, 20%));
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 4px solid $white;
+        margin: -40px 0 0 1rem;
+    }
+
+    .profile-info {
+        padding: 0.5rem 1rem;
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .profile-email {
+            font-size: 0.9rem;
+            color: $text-secondary;
+        }
+    }
+
+    .profile-stats {
+        display: flex;
+        padding: 1rem;
+        border-top: 1px solid $border-color;
+        
+        .stat {
+            flex: 1;
+            text-align: center;
+
+            .stat-number {
+                display: block;
+                font-weight: 700;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+                color: $text-secondary;
+            }
+        }
+    }
+}
+
+// Create Post Card
+.create-post-card {
+    @include card;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-form {
+    .post-form-header {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .post-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+
+        .post-title-input {
+            flex: 1;
+            border: none;
+            font-size: 1.1rem;
+            padding: 0.5rem;
+            border-bottom: 2px solid $border-color;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-color;
+            }
+        }
+    }
+
+    .post-content-input {
+        width: 100%;
+        min-height: 100px;
+        border: none;
+        resize: none;
+        font-size: 1rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .post-form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $border-color;
+        padding-top: 1rem;
+    }
+
+    .post-attachments {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .attachment-btn {
+        background: none;
+        border: none;
+        color: $primary-color;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 50%;
+
+        &:hover {
+            background: $hover-color;
+        }
+    }
+
+    .post-submit-btn {
+        background: $primary-color;
+        color: $white;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            background: darken($primary-color, 5%);
+        }
+    }
+}
+
+// Posts Feed
+.posts-feed {
+    section {
+        @include card;
+        padding: 1rem;
+        margin-bottom: 1rem;
+
+        .headers {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: $text-primary;
+        }
+
+        .postText {
+            color: $text-primary;
+            margin: 0.5rem 0;
+            line-height: 1.5;
+        }
+
+        .time {
+            color: $text-secondary;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+// Trending Section
+.trending-section {
+    @include card;
+    padding: 1rem;
+    position: sticky;
+    top: 80px;
+
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .topic {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid $border-color;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .topic-category {
+            font-size: 0.8rem;
+            color: $text-secondary;
+        }
+
+        h4 {
+            margin: 0.25rem 0;
+            color: $primary-color;
+        }
+
+        .topic-posts {
+            font-size: 0.8rem;
+            color: $text-secondary;
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+    .layout {
+        grid-template-columns: 280px 1fr;
+    }
+
+    .right-sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+
+    .left-sidebar {
+        display: none;
+    }
+
+    .nav-search {
+        display: none;
+    }
+}
+
+.signout-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: $text-primary;
+    border: 1px solid $border-color;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #ffebee;
+        color: #d32f2f;
+        border-color: #ffcdd2;
+    }
+
+    i {
+        font-size: 1rem;
+    }
+} 

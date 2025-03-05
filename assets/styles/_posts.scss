@@ -1,0 +1,47 @@
+.posts {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+
+    section {
+        background: rgba(27, 27, 27, 0.8);
+        width: 350px;
+        height: 450px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: $card-shadow;
+        transition: $transition-default;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .headers {
+            text-align: end;
+            font-size: 1.2em;
+            color: $primary-light;
+        }
+
+        .postText {
+            height: 100%;
+            background: rgba(44, 44, 44, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+
+        .time {
+            font-size: 14px;
+            text-align: end;
+            color: #d8d8d8;
+            font-style: italic;
+        }
+    }
+} 

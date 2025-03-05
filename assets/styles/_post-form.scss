@@ -1,0 +1,64 @@
+.postForm {
+    display: flex;
+    flex-direction: column;
+    background: rgba(27, 27, 27, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    color: $text-light;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: $card-shadow;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    label {
+        font-size: 1.2em;
+        color: $primary-light;
+    }
+}
+
+.textarea, .textarea2 {
+    resize: none;
+    background: rgba(53, 53, 53, 0.8);
+    color: $text-light;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: $transition-default;
+    width: 100%;
+
+    &:focus {
+        background: rgba(63, 63, 63, 0.8);
+        box-shadow: 0 0 10px rgba($primary-light, 0.3);
+    }
+}
+
+.textarea {
+    height: 60px;
+}
+
+.textarea2 {
+    height: 300px;
+}
+
+.postbtn {
+    padding: 12px 70px;
+    border-radius: 25px;
+    color: $text-light;
+    font-size: 18px;
+    background: $primary-gradient;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: $transition-default;
+    font-weight: bold;
+
+    &:hover {
+        transform: scale(1.05);
+        background: linear-gradient(45deg, darken($primary-color, 10%), darken($primary-light, 10%));
+    }
+} 

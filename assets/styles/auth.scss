@@ -1,0 +1,250 @@
+// Variables (matching main.scss)
+$primary-color: #1da1f2;
+$secondary-color: #657786;
+$background-color: #f7f9fa;
+$text-primary: #14171a;
+$text-secondary: #657786;
+$border-color: #e1e8ed;
+$hover-color: #e8f5fe;
+$white: #ffffff;
+
+// Mixins
+@mixin card {
+    background: $white;
+    border-radius: 15px;
+    border: 1px solid $border-color;
+}
+
+// Global Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: $background-color;
+    color: $text-primary;
+    line-height: 1.4;
+    min-height: 100vh;
+}
+
+// Navigation
+.main-nav {
+    background: $white;
+    border-bottom: 1px solid $border-color;
+    padding: 0.8rem 0;
+    margin-bottom: 2rem;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+// Auth Container
+.auth-container {
+    max-width: 1280px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 0 1rem;
+    min-height: calc(100vh - 150px);
+}
+
+// Welcome Section
+.auth-welcome {
+    display: flex;
+    align-items: center;
+    
+    .welcome-content {
+        h1 {
+            font-size: 2.5rem;
+            color: $primary-color;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: $text-primary;
+        }
+    }
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.2rem;
+
+        i {
+            width: 40px;
+            height: 40px;
+            background: $hover-color;
+            color: $primary-color;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+// Auth Forms
+.auth-forms {
+    .forms-container {
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
+.auth-form {
+    @include card;
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: $text-primary;
+    }
+
+    .form-subtitle {
+        color: $text-secondary;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: $text-primary;
+        font-weight: 500;
+    }
+}
+
+.input-with-icon {
+    position: relative;
+
+    i {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $secondary-color;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.8rem 1rem 0.8rem 2.5rem;
+        border: 1px solid $border-color;
+        border-radius: 25px;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+            box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+        }
+    }
+}
+
+.auth-button {
+    width: 100%;
+    padding: 0.8rem;
+    background: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background: darken($primary-color, 5%);
+    }
+
+    i {
+        font-size: 0.9rem;
+    }
+}
+
+// Responsive Design
+@media (max-width: 968px) {
+    .auth-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .auth-welcome {
+        text-align: center;
+        
+        .welcome-content {
+            h1 {
+                justify-content: center;
+            }
+        }
+    }
+
+    .feature-list {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .auth-forms {
+        .forms-container {
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        margin: 1rem auto;
+    }
+
+    .auth-form {
+        padding: 1.5rem;
+    }
+
+    .welcome-content {
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+} 
