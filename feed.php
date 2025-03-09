@@ -31,7 +31,7 @@ if(!isset($_SESSION['user_username']) || !isset($_SESSION['user_password'])){
             <div class="nav-actions">
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
                     <button type="submit" name="signOut" class="signout-btn">
-                        Sign Out <i class="fas fa-sign-out-alt"></i>
+                        Sign Out
                     </button>
                 </form>
             </div>
@@ -55,8 +55,7 @@ if(!isset($_SESSION['user_username']) || !isset($_SESSION['user_password'])){
                         <section class="post-card">
                             <div class="post-header">
                                 <div class="post-user-info">
-                                    <img src="https://api.dicebear.com/7.x/micah/svg?seed=<?php echo $row["username"]; ?>" 
-                                         alt="Profile" class="post-avatar">
+                                    <img src="imgs/img1.jpg" class="post-avatar">
                                     <div class="user-details">
                                         <h3 class="username"><?php echo htmlspecialchars($row["username"]); ?></h3>
                                         <span class="post-time"><?php echo date('F j, Y, g:i a', strtotime($row["created_at"])); ?></span>

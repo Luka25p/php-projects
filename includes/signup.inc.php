@@ -13,6 +13,7 @@ if(isset($_POST["submit"])){
         $stmt = "INSERT INTO users (username, password, email) VALUES ('$username','$hashdPsw','$email');";
 
         mysqli_query($conn,$stmt); 
-        header("location: lesson1.php");            
+        header("location: lesson1.php");
+        exit();            
     }   
 }

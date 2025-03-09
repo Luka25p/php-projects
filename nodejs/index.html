@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image: linear-gradient(30deg, purple, pink);
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            input{
+                background-color: rgb(39, 39, 39);
+                border: none;
+                font-size: 28px;
+                padding: 15px 10px;
+                border-radius: 20px;
+                color: white;
+                text-align: center;
+            }
+            button{
+                width: fit-content;
+                font-size: 28px;
+                background-color: rgb(43, 43, 43);
+                color: white;
+                border: none;
+                border-radius: 50px;
+                padding: 10px 80px;
+                cursor: pointer;
+            }
+        }
+        input::placeholder{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="ჩემი გულის კოდი" id="code">
+        <button id="click">გაგზავნა</button>
+    </form>
+
+
+
+    <script>
+        let code = document.getElementById("code")
+        document.getElementById("click").addEventListener("click", ()=>{
+            if(code.value == "081" || code.value == "765"){
+                window.open("news.html")
+            }else if(code.value == ""){
+                alert("დაწერე რამე რაიყო")
+            }else{
+                alert("დაგავიწყდა ნაგავო")
+            }
+        })
+        
+    </script>
+</body>
+</html>

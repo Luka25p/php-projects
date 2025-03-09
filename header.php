@@ -18,16 +18,8 @@ if (!isset($_SESSION)) {
                 <i class="fas fa-globe"></i>
                 Feed
             </a>
-            <a href="notifications.php">
+            <a href="#">
                 <i class="far fa-bell"></i>
-                <?php
-                if (isset($_SESSION['user_id'])) {
-                    $unread_count = getUnreadCount($conn, $_SESSION['user_id']);
-                    if ($unread_count > 0) {
-                        echo "<span class='badge'>$unread_count</span>";
-                    }
-                }
-                ?>
             </a>
             <a href="user.php">
                 <i class="fas fa-user"></i>

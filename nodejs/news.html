@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-image: url(/imgs/muxa2.mp4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        h1{
+            font-size: 60px;
+            letter-spacing: 20px;
+            color: white;
+        }
+        h2{
+            font-size: 40px;
+            color: rgb(226, 226, 226);
+        }
+        h3{
+            font-size: 20px;
+            padding-top: 20px;
+            text-align: center;
+            color: rgb(218, 218, 218);
+        }
+        video{
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            object-fit: cover;
+            top: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted>
+        <source src="../imgs/muxa2.mp4"  >
+    </video>
+    <audio src="../imgs/muxa.mp3" autoplay loop id="myVideo"></audio>
+    <h1>ბოდიში</h1>
+    <h2>პატარა</h2>
+    <h2>მიყვარხარ</h2>
+    <h3>ჩემი ერთადერთი ხარ და თუ გცალია დღეს მნახე</h3>
+    <script >
+        var vid = document.getElementById("myVideo");
+        vid.volume = 0.5;
+    </script>
+</body>
+</html>

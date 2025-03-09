@@ -3,6 +3,7 @@
 if(isset($_POST["post"])){
     if(empty($_POST["textTittle"]) || empty($_POST["postText"])){
         header("location: user.php");
+        exit();
     }else{
         $post_tittle = $_POST["textTittle"];
         $post_text = $_POST["postText"];
@@ -10,5 +11,6 @@ if(isset($_POST["post"])){
 
         mysqli_query($conn, $stmt);
         header("location: user.php");
+        exit();
     }
 }
